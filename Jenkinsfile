@@ -6,7 +6,6 @@ pipeline {
             steps {
                     checkout scm  
                 }
-        
         }
         stage('Test') {
             steps {
@@ -21,12 +20,8 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                script {
-                    def dockerImage = docker.build('my-node-app:1.0', '.')
-                    dockerImage.push() 
-                }
-                // sh 'export DOCKER_BUILDKIT=1'
-                // sh 'docker build -t my-node-app:1.0'
+                sh 'export DOCKER_BUILDKIT=1'
+                sh 'docker build -t my-node-app:1.0'
             }
         }
         
