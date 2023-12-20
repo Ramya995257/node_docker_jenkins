@@ -10,9 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // sh 'read -p "Ramya@2000" password'
                 sh 'sudo -S apt update'
-                // sh 'echo "Ramya@2000" | apt install npm'
                 sh 'npm test'
             }
         }
@@ -23,7 +21,7 @@ pipeline {
         }
         stage('Build Image') {
             steps {
-                sh 'sudo docker build -t my-node-app:1.0'
+                sh 'sudo -S docker build -t my-node-app:1.0'
             }
         }
         
