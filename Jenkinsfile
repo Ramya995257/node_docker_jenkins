@@ -22,7 +22,7 @@ pipeline {
         stage('Build Image') {
             steps {
                 sh 'export DOCKER_BUILDKIT=1'
-                sh 'sudo -S docker build -t my-node-app:1.0'
+                sh 'docker build -t my-node-app:1.0'
             }
         }
         
