@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'apt update'
+                sh 'sudo apt update'
                 // sh 'echo "Ramya@2000" | apt install npm'
                 sh 'npm test'
             }
