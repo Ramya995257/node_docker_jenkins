@@ -23,6 +23,11 @@ pipeline {
                 sh 'sudo -S docker build -t my-node-app:1.0 .'
             }
         }
+        stage('List Images') {
+            steps {
+                sh 'sudo -S docker images'
+            }
+        }
         
     }
 }
