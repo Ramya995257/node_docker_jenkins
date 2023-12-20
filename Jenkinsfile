@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'read -p "Ramya@2000" password'
+                // sh 'read -p "Ramya@2000" password'
                 sh 'sudo -S apt update'
                 // sh 'echo "Ramya@2000" | apt install npm'
                 sh 'npm test'
